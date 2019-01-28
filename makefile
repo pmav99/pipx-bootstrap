@@ -1,11 +1,11 @@
 .PHONY: build publish
 
 build:
-	python -m pip install --upgrade --quiet setuptools wheel twine
-	python setup.py --quiet sdist bdist_wheel
+	python3 -m pip install --upgrade --quiet setuptools wheel twine
+	python3 setup.py --quiet sdist bdist_wheel
 
 publish:
-	python -m twine upload dist/*
+	python3 -m twine upload dist/*
 
 clean:
 	rm -r build dist
