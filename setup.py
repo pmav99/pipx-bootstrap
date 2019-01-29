@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
-
-assert sys.version_info >= (3, 6, 0), "Python 3.6+ is required"
+if sys.version_info < (3, 6, 0):
+    exit("Python 3.6+ is required")
 
 import io
 import os
@@ -18,7 +18,7 @@ with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
 
 setup(
     name="pipx-bootstrap",
-    version="0.1.0.1",
+    version="0.1.0.3",
     author="Chad Smith",
     author_email="grassfedcode@gmail.com",
     description="description",
